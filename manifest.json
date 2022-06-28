@@ -1,0 +1,37 @@
+{
+    "name": "React Wallet",
+    "version": "1.0.0",
+    "description": "A crypto wallet",
+    "manifest_version": 3,
+    "content_scripts": [
+      {
+        "matches": [
+          "http://*/*",
+          "https://*/*"
+        ],
+        "js": [
+          "./js/content-script.js"
+        ]
+      }
+    ],
+    "background": {
+      "service-worker": [
+        "./js/background.js"
+      ]
+    },
+    "permissions": [
+      "storage",
+      "tabs",
+      "activeTab"
+    ],
+    "action": {
+      "default_title": "React Wallet",
+      "default_popup": "index.html"
+    },
+    "icons": {
+      "16": "./src/assets/logo.png",
+      "32": "./src/assets/logo.png",
+      "64": "./src/assets/logo.png"
+    }
+  
+  }
